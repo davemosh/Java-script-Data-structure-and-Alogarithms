@@ -1,0 +1,64 @@
+** start of undefined **
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Title Here</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Hello, World!</h1>
+
+    
+    <input type="text" id="user-input">
+
+    
+    <button id="check-btn">Check</button>
+    <button id="clear-btn">Clear</button>
+
+    
+    <div id="results-div"></div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
+
+
+** end of undefined **
+
+** start of undefined **
+
+
+
+** end of undefined **
+
+** start of undefined **
+
+const input = document.getElementById("user-input");
+const check = document.getElementById("check-btn");
+const clear = document.getElementById("clear-btn");
+const results = document.getElementById("results-div");
+
+check.addEventListener("click", () =>{
+  const regex = /^(1\s?)?(\(\d{3}\)|\d{3})([\s-]?)\d{3}([\s-]?)\d{4}$/
+
+  if (!input.value){
+    alert("Please provide a phone number")
+  }else if(regex.test(input.value)){
+    results.innerHTML = `Valid US number:  ${input.value}`
+  }else{
+    results.innerHTML = `Invalid US number:  ${input.value}`
+  }
+});
+
+clear.addEventListener("click", () =>{
+  results.innerHTML = null;
+})
+
+
+
+
+
+
+** end of undefined **
+
